@@ -4,15 +4,15 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.haymarsan.myanmarcurrencyexchange.data.room.CurrencyEntity
 
-class ExchangeRateListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+class CurrencyListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
 
-//    fun setData(currencyEntity: CurrencyEntity){
-//
-//
-//        //TODO
-//
-//    }
+    fun setData(currencyEntity: CurrencyEntity){
+
+
+        //TODO
+
+    }
 
 
 //    fun setData(bookVO: BookVO){
