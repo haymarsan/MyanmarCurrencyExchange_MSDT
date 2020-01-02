@@ -7,12 +7,12 @@ import com.haymarsan.myanmarcurrencyexchange.data.room.CurrencyEntity
 class ExchangeRateListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
 
-    fun setData(currencyEntity: CurrencyEntity){
-
-
-        //TODO
-
-    }
+//    fun setData(currencyEntity: CurrencyEntity){
+//
+//
+//        //TODO
+//
+//    }
 
 
 //    fun setData(bookVO: BookVO){
