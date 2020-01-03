@@ -1,26 +1,19 @@
 package com.haymarsan.myanmarcurrencyexchange.views.holders
 
 import android.view.View
-import androidx.recyclerview.widget.RecyclerView
 import com.haymarsan.myanmarcurrencyexchange.data.room.CurrencyEntity
+import kotlinx.android.synthetic.main.view_item_exchange_rate_list.view.*
 
-class CurrencyListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+class CurrencyListViewHolder(itemView: View): BaseViewHolder<CurrencyEntity>(itemView) {
 
+    override fun setData(data: CurrencyEntity) {
+        itemView.tvCurrencyCode.text = data.currency_code
+        itemView.tvSellRate.text = data.mmk
+    }
 
-    fun setData(currencyEntity: CurrencyEntity){
-
-
-        //TODO
+    override fun onClick(v: View?) {
 
     }
 
-
-//    fun setData(bookVO: BookVO){
-//
-//        itemView.tvBookName.text = itemView.edBookName.text.toString()
-//        itemView.tvBookPrice.text = itemView.edBookPrice.text.toString()
-//
-//    }
-//
 
 }

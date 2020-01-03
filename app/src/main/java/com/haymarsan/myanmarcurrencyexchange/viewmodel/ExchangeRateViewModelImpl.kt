@@ -1,21 +1,50 @@
-package com.haymarsan.myanmarcurrencyexchange.viewmodel
+package com.hms.currencyexchange.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.haymarsan.myanmarcurrencyexchange.data.room.CurrencyEntity
 import com.haymarsan.myanmarcurrencyexchange.data.vos.ExchangeRateVO
-import com.haymarsan.myanmarcurrencyexchange.repository.RepositoryImpl
+import com.hms.currencyexchange.repository.RepositoryImpl
 
 class ExchangeRateViewModelImpl(application: Application): AndroidViewModel(application), ExchangeRateViewModel {
 
-
     private val repository = RepositoryImpl(application)
+
     private lateinit var exchangeRateList: MutableLiveData<ExchangeRateVO>
 
-    override fun getExchangeRate(): LiveData<ExchangeRateVO> {
-        exchangeRateList = repository.getLatestCurrencyRate()
+    private lateinit var historyRateList: MutableLiveData<ExchangeRateVO>
 
+    override fun getAllCurrency(): LiveData<List<CurrencyEntity>> {
+        return repository.getAllCurrecny()
+    }
+
+    override fun insertCurrency(currencyEntity: CurrencyEntity) {
+        repository.insertCurrency(currencyEntity)
+    }
+
+    override fun updateCurrency(currencyEntity: CurrencyEntity) {
+        repository.updateCurrency(currencyEntity)
+    }
+
+    override fun deleteCurrency(currencyEntity: CurrencyEntity) {
+        repository.deleteCurrency(currencyEntity)
+    }
+
+    override fun deleteAllCurrency() {
+        repository.deleteAllCurrency()
+    }
+
+
+    override fun getExchangeRate(): LiveData<ExchangeRateVO> {
+        exchangeRateList = repository.getLatestRate()
         return exchangeRateList
     }
+
+
+
+
+
 }
