@@ -1,5 +1,7 @@
 package com.haymarsan.myanmarcurrencyexchange.activities
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -16,6 +18,15 @@ import android.view.Menu
 import com.haymarsan.myanmarcurrencyexchange.R
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+
+        fun newInstance(context: Context): Intent {
+            return Intent(context, MainActivity::class.java)
+
+        }
+    }
+
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
